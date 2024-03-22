@@ -1,0 +1,6 @@
+[credentials]
+consumer_key = c10piJ6G9J5ivHjbqomvszD6z
+consumer_secret = sG0fp0oDaYs1j6d4QZYgNrdKPR6E8kYcYZZFwiTQzi6DZuhh5K
+access_token = 1642440675659509760-QqsoaVUlEUCg8v6dEZA3YsMOL5L1ys
+access_token_secret = pS53iNfxCjC7UoMCrmY0NUs6J2bXPRIpxgWrlrRWXInPD
+
