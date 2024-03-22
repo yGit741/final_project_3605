@@ -1,0 +1,7 @@
+flask
+tweepy
+configparser
+pandas
+wordcloud 
+matplotlib
+seaborn

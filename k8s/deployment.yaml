@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: my-app
+spec:
+  replicas: 1
+  template:
+    spec:
+      containers:
+        - name: data-ingestion
+          image: app
+          command: ["python", "data_ingestion.py"]
+        - name: data-processing
+          image: app
+          command: ["python", "data_processing.py"]
+        - name: data-analysis
+          image: app
+          command: ["python", "data_analysis_microservice.py"]
+
+
+# kubectl apply -f k8s/deployment.yaml
+# kubectl apply -f k8s/service.yaml
