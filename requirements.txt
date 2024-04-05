@@ -5,3 +5,5 @@ pandas
 wordcloud 
 matplotlib
 seaborn
+string
+wordcloud
