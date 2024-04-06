@@ -1,9 +1,31 @@
 import tweepy
-from scripts import authentication
+import os
+import configparser
+
+def authenticator():
+    # parse the credentials from auth.txt
+    config_dir = os.path.join("scripts","auth.txt")
+
+    config = configparser.ConfigParser()
+    config.read(config_dir)
+
+    # read credentials from the config object
+    consumer_key = config.get("credentials", "consumer_key")
+    consumer_secret = config.get("credentials", "consumer_secret")
+    access_token = config.get("credentials", "access_token")
+    access_token_secret = config.get("credentials", "access_token_secret")
+
+    # authenticate with Twitter API
+    auth = tweepy.OAuthHandler(consumer_key, consumer_secret)
+    auth.set_access_token(access_token, access_token_secret)
+    api = tweepy.API(auth)
+
+    print(f"A valid API object created: '{api}'")
+    return api
 
 def ingest_data(start_year=2011, end_year=2017):
 
-    api_object = authentication.authenticator()
+    api_object = authenticator()
 
     # this is methodic because we don't really scrap the web due to api interference issues.
     top_tweeters = [
@@ -49,3 +71,7 @@ def ingest_data(start_year=2011, end_year=2017):
     # tweets_df = pd.DataFrame(tweets_dict)
     # instaed we load the kagle datasheet
     # return pd.read_csv(os.path.join("..", 'data','tweets_df.csv'))
+
+if __name__ == "__main__":
+    authenticator()
+    ingest_data()

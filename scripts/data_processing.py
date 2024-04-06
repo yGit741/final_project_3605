@@ -1,15 +1,15 @@
 import os
 import pandas as pd
-from dotenv import load_dotenv
 
-# load environment variable for the root directory
-load_dotenv()
-root_dir = os.getenv("ROOT_DIRECTORY")
+def data_processor():
+    # print(os.getcwd())
+    # print(os.listdir('.'))
+    data_dir = os.path.join('data', 'tweets_df.csv')
 
-def data_processor ():
-    data_dir = os.path.join(root_dir, 'data', 'tweets_df.csv')
-
+    # print(data_dir)
     data = pd.read_csv(data_dir)
+    # print(342342342343)
+
 
     # fill missing values in numeric columns with mean
     data.fillna(data.mean(), inplace=True)
@@ -37,3 +37,6 @@ def data_processor ():
     data.to_csv(data_dir, index=False)
 
     return data
+
+if __name__ == "__main__":
+    data_processor()

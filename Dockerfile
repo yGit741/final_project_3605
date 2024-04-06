@@ -11,5 +11,5 @@ COPY . /app/
 RUN pip install -r requirements.txt
 
 # Define the entry point (replace with your actual script name)
-CMD ["python", "main.py"]
+CMD ["sleep", "infinity"]
 

@@ -1,7 +1,4 @@
 import os
-from dotenv import load_dotenv
-load_dotenv()
-
 import pandas as pd
 from prettytable import PrettyTable
 import matplotlib.pyplot as plt
@@ -145,13 +142,11 @@ def visualize_date(processed_data):
 
 
 def run():
-    data_dir = os.getenv("ROOT_DIRECTORY")
-    data = pd.read_csv(os.path.join(data_dir, "data", "tweets_df_processed.csv"))
+    data = pd.read_csv(os.path.join("data", "tweets_df_processed.csv"))
     analysis_report(data)
     time_plot(data)
     tweets_words_cloud(data)
     regression_length_like(data)
-
 
 if __name__ == "__main__":
     run()

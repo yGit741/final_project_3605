@@ -1,10 +1,8 @@
 configparser
-dotenv
 tweepy
 prettytable
 pandas
 matplotlib
-sklearn
+scikit-learn
 nltk
 wordcloud
-
