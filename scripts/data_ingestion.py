@@ -1,7 +1,4 @@
-import pandas as pd
 import tweepy
-import os
-
 from scripts import authentication
 
 def ingest_data(start_year=2011, end_year=2017):

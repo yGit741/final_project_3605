@@ -1,9 +1,10 @@
-flask
-tweepy
 configparser
+dotenv
+tweepy
+prettytable
 pandas
-wordcloud 
 matplotlib
-seaborn
-string
+sklearn
+nltk
 wordcloud
+

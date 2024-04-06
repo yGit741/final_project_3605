@@ -1,9 +1,14 @@
 import os
-import pandas
 import pandas as pd
+from dotenv import load_dotenv
+
+# load environment variable for the root directory
+load_dotenv()
+root_dir = os.getenv("ROOT_DIRECTORY")
 
 def data_processor ():
-    data_dir = os.path.join('..', 'data', 'tweets_df.csv')
+    data_dir = os.path.join(root_dir, 'data', 'tweets_df.csv')
+
     data = pd.read_csv(data_dir)
 
     # fill missing values in numeric columns with mean
@@ -29,7 +34,6 @@ def data_processor ():
     if os.path.exists(processed_file_dir):
         os.remove(processed_file_dir)
 
-    data.to_csv(processed_file_dir, index=False)
+    data.to_csv(data_dir, index=False)
 
-    # return data
-
+    return data
