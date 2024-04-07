@@ -14,7 +14,6 @@ spec:
     spec:
       containers:
       - name: my-container
-        image: bdp_docker
-        command: ["python", "main.py"]
-
-# kubectl apply -f k8s/deployment.yaml
+        image: tweeter-app
+        command: ["/bin/sh", "-c"]
+        args: ["python data_ingestion.py && data_processing.py && data_analysis.py"]

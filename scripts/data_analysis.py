@@ -1,7 +1,11 @@
 import os
 import pandas as pd
 from prettytable import PrettyTable
+
+import matplotlib
+matplotlib.use('Agg')
 import matplotlib.pyplot as plt
+
 from wordcloud import WordCloud
 
 import nltk
