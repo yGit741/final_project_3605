@@ -1,5 +1,9 @@
 # Twitter Data Analysis Project
 
+Yonatan Greenshpan, 204266191
+Harel Damary, 305792020
+Tomer Shani, 204388920
+
 ## Overview
 This project aims to source real-time Twitter data for comprehensive analysis using a Kubernetes cluster. The project includes data acquisition, Kubernetes cluster configuration, data ingestion and processing, data analysis, insight visualization, and an executive summary of the findings.
 
